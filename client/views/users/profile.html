@@ -1,0 +1,15 @@
+<template name="profile">
+    {{#autoForm collection="Meteor.users" id="#"}}
+        <fieldset>
+            <legend>Mon profile de {{ currentUser.username }}</legend>
+            {{> afQuickField name="profile.firstName" value=profile.firstname }}
+            {{> afQuickField name="profile.lastName" value=profile.lastName}}
+            {{> afQuickField name="profile.birthDay" value=profile.birthDay}}
+            {{> afQuickField name="profile.gender" value=profile.gender}}
+            {{> afQuickField name="profile.organization" value=profile.organization}}
+            {{> afQuickField name="profile.website" value=profile.website}}
+            {{> afQuickField name="profile.bio" value=profile.bio}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Valider</button>
+    {{/autoForm}}
+</template>

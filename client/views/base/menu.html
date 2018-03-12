@@ -1,0 +1,26 @@
+<template name="menu">
+    <h3>Menu</h3>
+    <ul class="nav nav-pills nav-stacked">
+        <li><a href="{{pathFor route='home'}}">Accueil</a></li>
+
+        {{#if currentUser }}
+
+            <h3>Bonjour {{currentUser.username}}</h3>
+
+            {{#if isAdmin }}
+                <li><a href="{{pathFor route='admin'}}">Administration</a></li>
+            {{/if}}
+
+            <li><a href="{{pathFor route='user.profile'}}">Mon profile</a></li>
+            <li><a class="logout">Se déconnecter</a></li>
+
+        {{else}}
+
+            <h3>Mon compte</h3>
+
+            <li><a href="{{pathFor route='user.login'}}">Se connecter</a></li>
+            <li><a href="{{pathFor route='user.register'}}">S'inscrire ?</a></li>
+
+        {{/if}}
+    </ul>
+</template>

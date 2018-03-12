@@ -1,0 +1,20 @@
+<template name="mainLayout">
+    <head>
+        <title>OCShare</title>
+        <meta charset="utf-8"/>
+    </head>
+    <body style="background-image:url('../../../public/404.jpg');">
+    <div class="container">
+        <div class="row">
+            {{> header}}
+        </div>
+        <div class="row">
+            <nav class="col-md-3">{{> menu}}</nav>
+            <section class="col-md-9 well">{{> yield}}</section>
+        </div>
+        <div class="row">
+            {{> footer}}
+        </div>
+    </div>
+    </body>
+</template>

@@ -1,0 +1,10 @@
+<template name="admin">
+    <h1>Administration</h1>
+    <ul class="nav nav-pills nav-stacked">
+
+        <li><a href="{{pathFor route='admin.users'}}">liste des utilisateurs</a></li>
+        <li><a href="{{pathFor route='admin.mangas'}}">liste des mangas</a></li>
+
+    </ul>
+    {{> inputFile}}
+</template>

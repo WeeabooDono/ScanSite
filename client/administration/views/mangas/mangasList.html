@@ -1,0 +1,40 @@
+<template name="mangasList">
+    <fieldset>
+        <legend>Ajouter un manga</legend>
+        <ul class="nav nav-pills nav-stacked">
+            <li><a href="{{pathFor route='admin.insert'}}">Ajouter un manga</a></li>
+        </ul>
+    </fieldset>
+
+    <fieldset>
+        <legend>Liste des mangas</legend>
+        <ul class="list-group">
+            {{#each Mangas}}
+                <li class="list-group-item">
+                    <div class="media">
+
+                        <div class="media-left">
+                            <img src="/images/404.jpg" alt="post Travel image" height="70" width="70" class="pull-left">
+                        </div>
+                        <div class="media-body">
+                            <div class="clearfix content-heading">
+                                <a href="{{pathFor route='admin.update' name=name}}">
+                                    <h4 class="list-group-item-heading ">{{ title }}</h4>
+                                </a>
+                            </div>
+                            <p class="list-group-item-text">
+                                <a class="update btn btn-default">Modifier</a>
+                                <a class="delete btn btn-default">Supprimer</a>
+                            </p>
+                        </div>
+
+                        <div class="media-right">
+                            <span class="badge">{{ _id }}</span>
+                        </div>
+
+                    </div>
+                </li>
+            {{/each}}
+        </ul>
+    </fieldset>
+</template>
