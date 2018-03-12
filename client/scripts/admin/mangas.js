@@ -8,10 +8,8 @@ Template.mangasList.events({
     "click .delete": function () {
         Mangas.remove(this._id)
     },
-    "click .update": function (event) {
-        event.preventDefault();
-        console.log("update");
-        Session.set('showUpdateForm', true)
+    "click .update": function () {
+        Router.go("admin.update", {title: this.title});
     },
 });
 
@@ -22,3 +20,9 @@ Template.updateMangas.helpers({
     }
 });
 
+Template.viewManga.helpers({
+    "Manga": function () {
+        Meteor.subscribe('Mangas');
+        return Mangas.findOne({title: Iron.controller().getParams().title});
+    }
+});

@@ -1,5 +1,7 @@
 import SimpleSchema from 'simpl-schema';
 
+SimpleSchema.extendOptions(['autoform']);
+
 Chapters = new Mongo.Collection("chapters");
 
 Chapters.allow({
@@ -67,6 +69,16 @@ Globals.schemas.Mangas = new SimpleSchema({
     image: {
         type: String,
         optional: true
+    },
+    synopsis: {
+        type: String,
+        optional: true,
+        label: "Biographie",
+        autoform: {
+            afFieldInput: {
+                type: "textarea"
+            }
+        }
     }
 });
 

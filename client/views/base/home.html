@@ -1,9 +1,28 @@
 <template name="home">
     <h3>Home</h3>
+    <fieldset>
+    <legend>Liste des mangas</legend>
 
-    <ul class="nav nav-pills nav-stacked">
+    <ul class="list-group">
         {{#each Mangas}}
-            <li>{{ title }} </li>
+            <li class="list-group-item">
+                <div class="media">
+
+                    <div class="media-left">
+                        <img src="/images/404.jpg" alt="post Travel image" height="70" width="70" class="pull-left">
+                    </div>
+
+                    <div class="media-body">
+                        <div class="clearfix content-heading">
+                            <a href="{{pathFor route='view' name=name}}">
+                                <h4 class="list-group-item-heading ">{{ title }}</h4>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </li>
         {{/each}}
     </ul>
+    </fieldset>
 </template>

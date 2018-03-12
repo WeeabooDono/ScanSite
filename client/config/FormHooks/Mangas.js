@@ -36,11 +36,13 @@ AutoForm.hooks({
             let error = null;
 
             let title = doc.title;
-            Mangas.update({title: title},
+            Mangas.update({_id: doc._id},
                 {
                     $set:
                         {
                             title: title,
+                            image: doc.image,
+                            synopsis: doc.synopsis
                         },
                 }
                 , function (err) {
@@ -60,7 +62,7 @@ AutoForm.hooks({
         },
 
         onSuccess: function () {
-            Router.go(Utils.pathFor('admin'));
+            Router.go(Utils.pathFor('admin.mangas'));
         },
 
         onError: function (formType, err) {

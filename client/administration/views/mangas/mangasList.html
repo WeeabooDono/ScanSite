@@ -14,11 +14,11 @@
                     <div class="media">
 
                         <div class="media-left">
-                            <img src="/images/404.jpg" alt="post Travel image" height="70" width="70" class="pull-left">
+                            <img src="{{ image }}" alt="{{ title }}" height="112" width="75" class="pull-left">
                         </div>
                         <div class="media-body">
                             <div class="clearfix content-heading">
-                                <a href="{{pathFor route='admin.update' name=name}}">
+                                <a href="{{pathFor route='view' name=name}}">
                                     <h4 class="list-group-item-heading ">{{ title }}</h4>
                                 </a>
                             </div>
