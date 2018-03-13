@@ -19,8 +19,8 @@ shell-server@0.3.1            # Server-side component of the `meteor shell` comm
 
 accounts-base
 accounts-password
-aldeed:autoform
-aldeed:collection2
+aldeed:autoform@6.2.0
+aldeed:collection2@3.0.0
 iron:router
 jquery
 mizzao:bootstrap-3
@@ -32,3 +32,4 @@ aldeed:autoform-select2
 zimme:select2-bootstrap3-css
 session
 aldeed:collection2-core@2.0.1
+http

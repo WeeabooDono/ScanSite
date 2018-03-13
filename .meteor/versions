@@ -1,9 +1,9 @@
 accounts-base@1.4.2
 accounts-password@1.5.1
 alanning:roles@1.2.16
-aldeed:autoform@5.8.1
+aldeed:autoform@6.2.0
 aldeed:autoform-select2@2.0.3
-aldeed:collection2@2.7.1
+aldeed:collection2@3.0.0
 aldeed:collection2-core@2.0.4
 aldeed:simple-schema@1.5.4
 aldeed:template-extension@3.4.3

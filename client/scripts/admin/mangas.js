@@ -1,28 +1,47 @@
 Template.mangasList.helpers({
     "Mangas": function () {
-        return Mangas.find({}, { sort: { title: 1 }}).fetch();
+        return Mangas.find({}, {sort: {title: 1}}).fetch();
     }
 });
 
+
+
 Template.mangasList.events({
     "click .delete": function () {
-        Mangas.remove(this._id)
+        HTTP.call('DELETE', 'http://localhost:3000/mangas/' + this._id, function (error, response) {
+            if (error) console.log(error);
+            else console.log(response);
+        });
+        //Mangas.remove(this._id)
     },
     "click .update": function () {
         Router.go("admin.update", {title: this.title});
+    },
+    "click .addTome": function () {
+        Router.go("admin.add.tome", {title: this.title});
     },
 });
 
 Template.updateMangas.helpers({
     "Manga": function () {
-        Meteor.subscribe('Mangas');
+        /*
+        let manga = Mangas.findOne({title: Iron.controller().getParams().title})
+        console.log(manga)
+        HTTP.call( 'GET', 'http://localhost:3000/mangas/' + manga._id, function( error, response ) {
+            if ( error ) {
+                console.log( error );
+            } else {
+                // presque le même
+                return JSON.parse(response.content);
+            }
+        });
+        */
         return Mangas.findOne({title: Iron.controller().getParams().title});
     }
 });
 
 Template.viewManga.helpers({
     "Manga": function () {
-        Meteor.subscribe('Mangas');
         return Mangas.findOne({title: Iron.controller().getParams().title});
     }
 });

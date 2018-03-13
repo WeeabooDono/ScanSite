@@ -11,7 +11,10 @@
         <ul class="list-group">
             {{#each Mangas}}
                 <li class="list-group-item">
+                    <div class="row">
+                        <div class="col-sm-9">
                     <div class="media">
+
 
                         <div class="media-left">
                             <img src="{{ image }}" alt="{{ title }}" height="112" width="75" class="pull-left">
@@ -25,16 +28,22 @@
                             <p class="list-group-item-text">
                                 <a class="update btn btn-default">Modifier</a>
                                 <a class="delete btn btn-default">Supprimer</a>
+
                             </p>
+                            <div class="media-right">
+                                <br><span class="badge">{{ _id }}</span>
+                            </div>
                         </div>
+                    </div>
+                    </div>
 
-                        <div class="media-right">
-                            <span class="badge">{{ _id }}</span>
-                        </div>
-
+                    <div class="col-sm-3">
+                    <a class="addTome btn btn-default">Ajouter un tome</a>
+                    </div>
                     </div>
                 </li>
             {{/each}}
         </ul>
     </fieldset>
+
 </template>

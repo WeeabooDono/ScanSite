@@ -1,9 +1,27 @@
 <template name="viewManga">
     <h1>About {{ Manga.title }}</h1>
+
+    <p>Publié le {{ Manga.published }}</p>
+
     <div class="media-left">
-    <img src="{{ Manga.image }}" alt="{{ Manga.title }}">
+        <img src="{{ Manga.image }}" alt="{{ Manga.title }}">
     </div>
+
     <div class="media-body">
         <p>{{ Manga.synopsis }}</p>
     </div>
+    {{#each Manga.tomes}}
+        <dl class="nav nav-pills nav-stacked">
+
+            <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{@index}}">
+               {{ this.title }}
+            </button>
+            <div id="{{@index}}" class="collapse in">
+                {{#each this.chapters }}
+                    <dt>{{ this.title }}</dt>
+                {{/each}}
+            </div>
+        </dl>
+    {{/each}}
+
 </template>

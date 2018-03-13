@@ -33,7 +33,6 @@ Globals.schemas.Chapters = new SimpleSchema({
         type: String,
         label: "Titre"
     }
-
 });
 
 Globals.schemas.Tomes = new SimpleSchema({
@@ -77,6 +76,16 @@ Globals.schemas.Mangas = new SimpleSchema({
         autoform: {
             afFieldInput: {
                 type: "textarea"
+            }
+        }
+    },
+    published: {
+        type: Date,
+        optional: true,
+        label: "Date de publication",
+        autoform: {
+            afFieldInput: {
+                type: "date"
             }
         }
     }

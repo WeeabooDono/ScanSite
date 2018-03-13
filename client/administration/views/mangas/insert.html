@@ -1,8 +1,12 @@
 <template name="insertMangas">
-    {{#autoForm collection="Mangas" id="insertMangas"}}
+    {{#autoForm collection="Mangas" id="insertMangas" type="insert"}}
         <fieldset>
             <legend>Ajouter un manga</legend>
             {{> afQuickField name="title"}}
+            {{> afQuickField name="image"}}
+            {{> afQuickField name="synopsis"}}
+            {{> afQuickField name="published"}}
+            {{> afQuickField name="tomes"}}
         </fieldset>
         <button type="submit" class="btn btn-primary">Valider</button>
     {{/autoForm}}

@@ -9,6 +9,8 @@
 
             {{#if isAdmin }}
                 <li><a href="{{pathFor route='admin'}}">Administration</a></li>
+                <li><a href="{{pathFor route='admin.users'}}">liste des utilisateurs</a></li>
+                <li><a href="{{pathFor route='admin.mangas'}}">liste des mangas</a></li>
             {{/if}}
 
             <li><a href="{{pathFor route='user.profile'}}">Mon profile</a></li>
