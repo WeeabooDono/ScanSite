@@ -8,10 +8,13 @@ Template.mangasList.helpers({
 
 Template.mangasList.events({
     "click .delete": function () {
-        HTTP.call('DELETE', 'http://localhost:3000/mangas/' + this._id, function (error, response) {
-            if (error) console.log(error);
-            else console.log(response);
-        });
+        if(confirm("Voulez-vous vraiment supprimer ce manga ?")) {
+            HTTP.call('DELETE', 'http://localhost:3000/mangas/' + this._id, function (error, response) {
+                if (error) console.log(error);
+                else console.log(response);
+            });
+        }
+        else console.log("requête annulée.")
         //Mangas.remove(this._id)
     },
     "click .update": function () {
