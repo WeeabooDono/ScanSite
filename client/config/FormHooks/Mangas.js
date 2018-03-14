@@ -49,7 +49,7 @@ AutoForm.hooks({
         },
 
         onSuccess: function () {
-            //Router.go(Utils.pathFor('admin.mangas'));
+            Router.go(Utils.pathFor('admin.mangas'));
         },
 
         onError: function (formType, err) {

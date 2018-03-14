@@ -48,3 +48,9 @@ Template.viewManga.helpers({
         return Mangas.findOne({title: Iron.controller().getParams().title});
     }
 });
+
+Template.insertTome.helpers({
+    "Manga": function () {
+        return Mangas.findOne({title: Iron.controller().getParams().title});
+    }
+});
