@@ -1,0 +1,57 @@
+ db.mangas.update({"_id": "Q2moiYTxtCQktZT7g"},
+            {
+                $set: {
+                    "title": "Monku no Tsukeyou ga Nai Love Comedy",
+                    "image": "/mangas/Monku no Tsukeyou ga Nai Love Comedy/cover_pic.jpg",
+                    "synopsis": "Kanaruzawa Sekai, \"The God Who Lived A Thousand Years,\" is a beautiful girl with silver hair and red eyes. She's pompous and does not know much about her surroundings, and despite her childish appearance, she can tolerate alcohol and tobacco, and spends her day in her mansion reading books.\n\nOffered to her as a \"living sacrifice\" is high school student Kirishima Yuuki. As he was told she'd grant her one thing in exchange of being the sacrifice, Kirishima said: \"Kanaruzawa Sekai-san, marry me.\"\n\nAnd so, they start to live their life together—but their days without peace nor love became disrupted, as the world began to be disordered due to a terrifying secret concerning the whole world.\n\nA comedically pure love, and a never-ending story begins here!",
+                    "published": ISODate("2014-11-14T00:00:00Z"),
+                    "tomes": [
+                        {
+                            "_id": "bDHAuioppZ8wp5TA6",
+                            "title": "Tome 1",
+                            "description": "Premier tome de la série",
+                            "folder": "v01",
+                            "chapters": [
+                                {
+                                    "_id": "5k7hWLipSxgiPYvPg",
+                                    "title": "Chapitre 1",
+                                    "folder": "v01/c001",
+                                    "pictures": [
+                                        "01.jpg",
+                                        "02.jpg",
+                                        "03.jpg",
+                                        "04.jpg",
+                                        "05.jpg",
+                                        "06.jpg",
+                                        "07.jpg",
+                                        "08.jpg",
+                                        "09.jpg",
+                                        "10.jpg",
+                                        "11.jpg"
+                                    ]
+                                },
+                                {
+                                    "_id": "TCTQPv5QZt5KtPpCS",
+                                    "title": "Chapitre 2",
+                                    "folder": "v01/c002",
+                                    "pictures": [
+                                        "01.jpg",
+                                        "02.jpg",
+                                        "03.jpg",
+                                        "04.jpg",
+                                        "05.jpg",
+                                        "06.jpg",
+                                        "07.jpg",
+                                        "08.jpg",
+                                        "09.jpg",
+                                        "10.jpg",
+                                        "11.jpg",
+                                        "12.jpg"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+    )
