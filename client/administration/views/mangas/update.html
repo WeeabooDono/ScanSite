@@ -1,13 +1,12 @@
 <template name="updateMangas">
-    {{ Manga.title }}
-    {{#autoForm collection="Mangas" id="updateMangas" doc=Manga type="update"}}
+    {{#autoForm collection="Mangas" id="updateMangas" doc=Manga type="update" setArrayItems="true"}}
         <fieldset>
             <legend>Editer</legend>
             {{> afQuickField name="title"}}
             {{> afQuickField name="image"}}
             {{> afQuickField name="synopsis"}}
             {{> afQuickField name="published"}}
-            {{> afQuickField name="tomes" value=tomes}}
+
         <button type="submit" class="btn btn-primary">Valider</button>
         </fieldset>
     {{/autoForm}}

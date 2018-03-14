@@ -32,7 +32,21 @@ Globals.schemas.Chapters = new SimpleSchema({
     title: {
         type: String,
         label: "Titre"
-    }
+    },
+    folder: {
+        type: String,
+        optional: true,
+        label: "Dossier"
+    },
+    pictures: {
+        type: Array,
+        optional: true,
+        label: "Images"
+    },
+    "pictures.$":{
+        type: String,
+        label: "Image"
+    },
 });
 
 Globals.schemas.Tomes = new SimpleSchema({
@@ -40,10 +54,28 @@ Globals.schemas.Tomes = new SimpleSchema({
         type: String,
         label: "Titre"
     },
+    description: {
+        type: String,
+        optional: true,
+        label: "Description"
+    },
+    folder: {
+        type: String,
+        optional: true,
+        label: "Dossier"
+    },
     chapters: {
         type: Array,
         optional: true,
         label: "Chapitres"
+    },
+    "chapters.$._id": {
+        type: String,
+        regEx: SimpleSchema.RegEx.Id,
+        autoValue: function(){ return Random.id(); },
+        autoform: {
+            type: "hidden"
+        }
     },
     "chapters.$":{
         type: Globals.schemas.Chapters,
@@ -61,18 +93,26 @@ Globals.schemas.Mangas = new SimpleSchema({
         optional: true,
         label: "Tomes"
     },
+    "tomes.$._id": {
+        type: String,
+        regEx: SimpleSchema.RegEx.Id,
+        autoValue: function(){ return Random.id(); },
+        autoform: {
+            type: "hidden"
+        }
+    },
     "tomes.$":{
         type: Globals.schemas.Tomes,
         label: "Tome"
     },
     image: {
         type: String,
-        optional: true
+        optional: true,
     },
     synopsis: {
         type: String,
         optional: true,
-        label: "Biographie",
+        label: "Synopsis",
         autoform: {
             afFieldInput: {
                 type: "textarea"
