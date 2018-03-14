@@ -23,6 +23,15 @@ Template.mangasList.events({
     "click .addTome": function () {
         Router.go("admin.add.tome", {title: this.title});
     },
+
+});
+
+Template.viewManga.events({
+
+    "click .updateTome": function () {
+        Router.go("admin.update.tome", {title: this.title, _id:0});
+
+    }
 });
 
 Template.updateMangas.helpers({
@@ -52,5 +61,14 @@ Template.viewManga.helpers({
 Template.insertTome.helpers({
     "Manga": function () {
         return Mangas.findOne({title: Iron.controller().getParams().title});
+    }
+});
+
+Template.updateTome.helpers({
+    "Manga": function () {
+        return Mangas.findOne({title: Iron.controller().getParams().title});
+    },
+    "Tome": function(){
+        return Mangas.findOne({title: Iron.controller().getParams().title}).tomes[Iron.controller().getParams()._id]
     }
 });

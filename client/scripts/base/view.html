@@ -14,8 +14,11 @@
         <dl class="nav nav-pills nav-stacked">
 
             <button type="button" class="btn btn-info" data-toggle="collapse" data-target="#{{@index}}">
-               {{ this.title }}
+                {{ this.title }}
             </button>
+            {{#if isAdmin }}
+                <a class="updateTome btn btn-default">Modifier le tome</a>
+            {{/if}}
             <div id="{{@index}}" class="collapse in">
                 {{#each this.chapters }}
                     <dt>{{ this.title }}</dt>

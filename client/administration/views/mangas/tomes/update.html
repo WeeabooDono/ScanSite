@@ -1,0 +1,9 @@
+<template name="updateTome">
+    {{#autoForm collection="Mangas" id="updateMangas" type="update" doc=Manga}}
+        <fieldset>
+            <legend>Modifier le tome</legend>
+            {{> afQuickField name="tomes.$" value=tomes}}
+        </fieldset>
+        <button type="submit" class="btn btn-primary">Valider</button>
+    {{/autoForm}}
+</template>
