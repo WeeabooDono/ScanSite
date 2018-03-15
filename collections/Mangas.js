@@ -5,27 +5,44 @@ SimpleSchema.extendOptions(['autoform']);
 Chapters = new Mongo.Collection("chapters");
 
 Chapters.allow({
-    insert: function(){return true;},
-    update: function(){return true;},
-    remove: function(){return true;}
+    insert: function () {
+        return true;
+    },
+    update: function () {
+        return true;
+    },
+    remove: function () {
+        return true;
+    }
 });
 
 Tomes = new Mongo.Collection("tomes");
 
 Tomes.allow({
-    insert: function(){return true;},
-    update: function(){return true;},
-    remove: function(){return true;}
+    insert: function () {
+        return true;
+    },
+    update: function () {
+        return true;
+    },
+    remove: function () {
+        return true;
+    }
 });
 
 Mangas = new Mongo.Collection("mangas");
 
 Mangas.allow({
-    insert: function(){return true;},
-    update: function(){return true;},
-    remove: function(){return true;}
+    insert: function () {
+        return true;
+    },
+    update: function () {
+        return true;
+    },
+    remove: function () {
+        return true;
+    }
 });
-
 
 
 Globals.schemas.Chapters = new SimpleSchema({
@@ -43,10 +60,11 @@ Globals.schemas.Chapters = new SimpleSchema({
         optional: true,
         label: "Images"
     },
-    "pictures.$":{
+    "pictures.$": {
         type: String,
         label: "Image"
     },
+
 });
 
 Globals.schemas.Tomes = new SimpleSchema({
@@ -72,12 +90,14 @@ Globals.schemas.Tomes = new SimpleSchema({
     "chapters.$._id": {
         type: String,
         regEx: SimpleSchema.RegEx.Id,
-        autoValue: function(){ return Random.id(); },
+        autoValue: function () {
+            return Random.id();
+        },
         autoform: {
             type: "hidden"
         }
     },
-    "chapters.$":{
+    "chapters.$": {
         type: Globals.schemas.Chapters,
         label: "Chapitre"
     }
@@ -96,12 +116,14 @@ Globals.schemas.Mangas = new SimpleSchema({
     "tomes.$._id": {
         type: String,
         regEx: SimpleSchema.RegEx.Id,
-        autoValue: function(){ return Random.id(); },
+        autoValue: function () {
+            return Random.id();
+        },
         autoform: {
             type: "hidden"
         }
     },
-    "tomes.$":{
+    "tomes.$": {
         type: Globals.schemas.Tomes,
         label: "Tome"
     },

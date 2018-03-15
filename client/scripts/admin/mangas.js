@@ -4,11 +4,16 @@ Template.mangasList.helpers({
     }
 });
 
+Template.insertChapter.helpers({
+    "scope": function () {
+        return "tomes." + Iron.controller().getParams().index + ".chapters";
+    }
+});
 
 
 Template.mangasList.events({
     "click .delete": function () {
-        if(confirm("Voulez-vous vraiment supprimer ce manga ?")) {
+        if (confirm("Voulez-vous vraiment supprimer ce manga ?")) {
             HTTP.call('DELETE', 'http://localhost:3000/mangas/' + this._id, function (error, response) {
                 if (error) console.log(error);
                 else console.log(response);
@@ -30,5 +35,8 @@ Template.viewManga.events({
     "click .addTome": function () {
         Router.go("admin.update.tome", {title: Iron.controller().getParams().title});
     },
-
+    "click .addChapter": function () {
+        // can't reach the index
+        //Router.go("admin.insert.chapter", {title: Iron.controller().getParams().title, index:this.index });
+    },
 });

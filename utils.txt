@@ -1,4 +1,4 @@
- db.mangas.update({"_id": "Q2moiYTxtCQktZT7g"},
+ db.mangas.update({"_id": "jqtK5i27ZGqXNpe76"},
             {
                 $set: {
                     "title": "Monku no Tsukeyou ga Nai Love Comedy",
