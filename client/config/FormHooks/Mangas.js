@@ -27,5 +27,21 @@ AutoForm.hooks({
         onError: function (formType, err) {
             alert(err.reason)
         }
-    }
+    },
+    'updateManga': {
+        onSubmit: function (doc) {
+            //handeled by type="update"
+            return false; // Dans tout les cas, arrete la soumission des donneés.
+        },
+
+        onSuccess: function () {
+            history.back()
+        },
+
+        onError: function (formType, err) {
+            alert(err.reason)
+        }
+    },
+
+
 });

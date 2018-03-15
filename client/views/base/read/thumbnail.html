@@ -1,0 +1,8 @@
+<template name="thumbnail">
+    {{! Pour chaques images }}
+    {{#each pictures}}
+        {{@index}}
+        <img src="{{folder}}/{{this}}" alt="..." class="img-responsive center-block"/>
+    {{/each}}
+
+</template>

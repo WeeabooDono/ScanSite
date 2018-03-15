@@ -13,5 +13,10 @@ UI.registerHelper('setTitle', function(title){
 });
 
 UI.registerHelper('isAdmin', function () {
-    return !!Roles.userIsInRole(Meteor.userId(), ['admin']);
+    if(Meteor.user().roles !== undefined)
+    return Roles.userIsInRole(Meteor.userId(), ['admin']);
+});
+
+UI.registerHelper('Manga', function() {
+    return Mangas.findOne({title: Iron.controller().getParams().title});
 });
