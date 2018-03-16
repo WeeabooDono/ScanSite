@@ -1,8 +1,22 @@
 <template name="thumbnail">
     {{! Pour chaques images }}
     {{#each pictures}}
-        {{@index}}
         <img src="{{folder}}/{{this}}" alt="..." class="img-responsive center-block"/>
     {{/each}}
 
+
+    <script>
+        function go_left(){console.log('left');}
+        function go_up(){console.log('up');}
+        function go_right(){console.log('right');}
+        function go_down(){console.log('down');}
+
+
+        $(document).on('keydown',function(e){
+
+            var act={37:go_left, 38:go_up, 39:go_right, 40:go_down};
+            if(act[e.which]) var a=new act[e.which];
+
+        });
+    </script>
 </template>

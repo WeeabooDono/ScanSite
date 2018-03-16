@@ -24,13 +24,18 @@
             {{#if isAdmin }}
                 <a class="btn btn-default" href="/admin/mangas/{{Manga.title}}/{{@index}}/insert">Ajouter un
                     chapitre</a>
+                <a class="removeTome btn btn-default" type="hidden">Supprimer</a>
             {{/if}}
             <div id="{{@index}}" class="collapse in">
 
                 {{#each this.chapters }}
-                    <dt><a href="/mangas/{{Manga.title}}/{{ this.folder }}">{{ this.title }}</a></dt>
+
+                    <dt><a href="/mangas/{{Manga.title}}/{{ this.folder }}">{{ this.title }}</a>
+                    <a class="removeChapter btn btn-default">Supprimer</a></dt>
+
                 {{/each}}
             </div>
         </dl>
     {{/each}}
+    {{> comments }}
 </template>

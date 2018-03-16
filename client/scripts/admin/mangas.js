@@ -39,4 +39,35 @@ Template.viewManga.events({
         // can't reach the index
         //Router.go("admin.insert.chapter", {title: Iron.controller().getParams().title, index:this.index });
     },
+    "click .removeChapter": function () {
+        console.log("TODO: remove -->");
+        console.log(this);
+        let manga = Mangas.findOne({title: Iron.controller().getParams().title});
+
+        Mangas.update(
+            {_id: manga._id},
+            {
+                $pull: {
+                    tomes: {
+                        chapters: this
+                    }
+                }
+            }
+        );
+
+    },
+    "click .removeTome": function() {
+        console.log("TODO: remove -->");
+        console.log(this);
+        let manga = Mangas.findOne({title: Iron.controller().getParams().title});
+
+        Mangas.update(
+            {_id: manga._id},
+            {
+                $pull: {
+                    tomes: this
+                }
+            }
+        );
+    }
 });

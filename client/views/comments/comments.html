@@ -1,0 +1,36 @@
+<template name="comments">
+    <form>
+        <fieldset>
+            <legend>Laissez un commentaire</legend>
+
+
+            <div class="detailBox">
+
+                <div class="media">
+                    <form>
+                        {{! Partie gauche }}
+                        <div class="media-left">
+                            <img src="/images/404.jpg" alt="post Travel image" height="105" width="105"
+                                 class="pull-right">
+                        </div>
+                        {{! Corps de <li> }}
+
+                        <div class="media-body">
+                            <span class="badge">{{ user.username }} - Membre depuis le {{ user.createdAt }}</span>
+                            <textarea name="" id="" cols="30" rows="10"></textarea>
+                        </div>
+                        {{! Partie droite}}
+                        <div class="media-right">
+
+                            <input type="submit" class="btn btn-default" value="Envoyer">
+
+                        </div>
+                    </form>
+                </div>
+
+
+            </div>
+        </fieldset>
+    </form>
+
+</template>
